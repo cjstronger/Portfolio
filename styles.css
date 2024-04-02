@@ -254,4 +254,40 @@ main{
         grid-column:span 8;
     }
 }
-
+}
+@keyframes spin-in{
+    0%{
+        scale: 0%;
+        transform: rotate(-70deg)
+    }
+    80%{
+        scale: 100%;
+        transform: rotate(20deg)
+    }
+    100%{
+        transform: rotate(0deg)
+    }
+}
+@keyframes spin-out{
+    0%{
+        scale: 0%;
+        transform: rotate(70deg)
+    }
+    80%{
+        scale: 100%;
+        transform: rotate(-20deg)
+    }
+    100%{
+        transform: rotate(0deg)
+    }
+}
+.project-tile.row1.firstbox, .project-tile.row2.fifthbox, .project-tile.row3.secondbox, .project-tile.row3.firstbox, .project-tile.row2.firstbox{
+    animation: spin-in linear forwards;
+    animation-timeline: view();
+    animation-range: 200px 500px;
+}
+.project-tile.row1.secondbox, .project-tile.row2.thirdbox, .project-tile.row2.secondbox, .project-tile.row3.thirdbox, .project-tile.row2.fourthbox{
+    animation: spin-out linear forwards;
+    animation-timeline: view();
+    animation-range: 200px 500px;
+}
